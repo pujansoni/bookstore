@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p class="book-title">
+  <%= @book.name %>
+</p>
+
+<p class="book-description">
+  <%= @book.description %>
+</p>
+
+<%#= image_tag "/books/#{@book.id}/cover/#{@book.cover_filename}" if @book.cover_changed? %>
+<%= image_tag @book.cover.url if @book.cover? %>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', books_path %>
